@@ -3,78 +3,171 @@
 <head>
     <title>TG Мастер</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
-            background-color: #f0f2f5;
-            color: #333;
-            font-family: Arial, sans-serif;
+            background: linear-gradient(to top, #0A1C2B, #2A6A6E);
+            color: #e0e0e0;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 20px;
             text-align: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+        h1, h2, p, ul, ol, button {
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
         }
         h1 {
-            font-size: 28px;
-            color: #1a73e8;
+            font-size: 32px;
+            color: #00ddeb;
             margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 221, 235, 0.5);
+            animation-delay: 0.2s;
         }
         h2 {
-            font-size: 20px;
-            color: #333;
+            font-size: 22px;
+            color: #ffffff;
             margin-top: 20px;
+            font-weight: 500;
+            animation-delay: 0.4s;
         }
         p {
             font-size: 16px;
-            line-height: 1.5;
+            line-height: 1.6;
+            color: #b0b0b0;
+            animation-delay: 0.6s;
         }
         ul, ol {
             text-align: left;
             max-width: 600px;
             margin: 0 auto;
             padding-left: 20px;
+            animation-delay: 0.8s;
         }
         li {
             margin-bottom: 10px;
+            color: #e0e0e0;
+        }
+        li i {
+            margin-right: 10px;
+            color: #00ddeb;
+        }
+        .why-list {
+            list-style: none;
+            counter-reset: my-counter;
+            padding-left: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .why-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+            counter-increment: my-counter;
+        }
+        .why-list li::before {
+            content: counter(my-counter);
+            position: absolute;
+            left: 0;
+            width: 24px;
+            height: 24px;
+            background: #ffffff;
+            color: #00ddeb;
+            border: 2px solid #00ddeb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .why-list li i {
+            display: none;
+        }
+        .why-list li strong {
+            display: block;
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 5px;
         }
         button {
-            background-color: #1a73e8;
+            background: linear-gradient(90deg, #00ddeb, #007bff);
             color: #ffffff;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 16px;
-            border-radius: 5px;
+            border-radius: 25px;
             cursor: pointer;
             margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation-delay: 1s;
         }
         button:hover {
-            background-color: #1557b0;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+        }
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(0, 123, 255, 0.2);
         }
         #response {
             margin-top: 20px;
             font-size: 18px;
-            color: #1a73e8;
+            color: #00ddeb;
+            text-shadow: 0 0 5px rgba(0, 221, 235, 0.3);
+            animation-delay: 1.2s;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
-    <h1>TG Мастер</h1>
+    <h1>Услуга "TG Мастер" — ваш ключ к успеху в Telegram</h1>
     <p>Универсальное решение для онлайн-рекламы ваших продуктов</p>
-    <h2>Лучшие инструменты по генерации прибыли в Telegram, которые позволяют привлечь вашему продукту или  услуге целевую аудиторию</h2>
-    <ul>
-        <li>Автоматизация рутинных процессов</li>
-        <li>Коммерческий подход</li>
-        <li>Полное сопровождение</li>
-        <li>Безопасность</li>
-    </ul>
-    <h2>Кратко о нашем комплексном подходе:</h2>
-    <ol>
-        <li><strong>Неирокоментинг:</strong> Эффективный способ привлечь внимание к вашим брендам через активное взаимодействие с аудиторией в других каналах. Это создает обсуждения и повышает интерес к вашему контенту.</li>
-        <li><strong>Инвайтинг:</strong> Создание чата для целевой аудитории позволяет собрать заинтересованных людей в одном месте, где они могут узнать больше о вашем предложении.</li>
-        <li><strong>Отметки в сторис:</strong> Использование сторис для продвижения вашего предложения и уведомление потенциальных клиентов — это отличный способ повысить видимость и вовлеченность.</li>
-        <li><strong>Доступ к умному боту:</strong> Инструмент на базе ChatGPT может значительно упростить процесс передачи контента и идей, что особенно полезно для активного ведения канала.</li>
-        <li><strong>Персонализированные рекомендации:</strong> Индивидуальные советы помогут вам лучше адаптировать стратегию ведения канала под ваши нужды и цели.</li>
+    <h2>Лучшие инструменты по генерации прибыли в телеграм, позволяющие привлечь к вашему продукту или услуге целевую аудиторию</h2>
+    <h2>Почему именно наш продукт?</h2>
+    <p>Мы обеспечиваем комплексный подход за счёт:</p>
+    <ol class="why-list">
+        <li>
+            <strong>Автоматизации рутинных процессов</strong>
+            Всё, что только возможно — будет автоматизировано.
+        </li>
+        <li>
+            <strong>Полного сопровождения</strong>
+            Мы сопровождаем вас на всех этапах развития вашего бизнеса.
+        </li>
+        <li>
+            <strong>Безопасности</strong>
+            С нашим новым инструментом вы действительно сможете спать спокойно — наш умный бот сделает большую часть работы за вас.
+        </li>
+        <li>
+            <strong>Персонализированных рекомендаций</strong>
+            Индивидуальные советы помогут вам лучше адаптировать стратегию ведения канала под ваши нужды и цели.
+        </li>
     </ol>
-    <p>Если у вас есть дополнительные вопросы или нужна помощь с конкретными аспектами продвижения в Телеграме, дайте знать!</p>
-    <p><strong>Доступ ко всем инструментам: 20,000 за всё в месяц, вместо 27,000</strong></p>
+    <h2>Как это работает?</h2>
+    <ol>
+        <li><strong>Нейрокомментинг:</strong> Наш аккаунт-копия активно вступает в каналы, где обитает ваша целевая аудитория. Мы оставляем продуманные комментарии на актуальные посты, что не только привлекает внимание к вашему бренду, но и создает живое обсуждение вокруг вашей темы.</li>
+        <li><strong>Инвайтинг:</strong> Мы формируем целевую базу людей и создаем специально подготовленный чат, куда добавляем участников. Здесь они могут подробно ознакомиться с вашим предложением и задать вопросы, что способствует более глубокому взаимодействию.</li>
+        <li><strong>Отметки в сторис:</strong> Мы подготавливаем базу потенциальных клиентов, а затем наш аккаунт-копия публикует привлекательные сторис с вашим предложением. После этого мы отмечаем собранных людей на этих сторис, что гарантирует, что они увидят ваше предложение и получат уведомление.</li>
+        <li><strong>Доступ к умному боту:</strong> Получите доступ к мощному боту, основанному на ChatGPT, который поможет вам генерировать идеи, находить нужную информацию в интернете и даже создавать уникальные изображения. Это значительно упростит процесс ведения вашего канала и сделает его более привлекательным.</li>
+        <li><strong>Персонализированные рекомендации:</strong> Мы предоставим вам индивидуальные советы и обратную связь по ведению вашего канала, чтобы вы могли максимально эффективно использовать все доступные инструменты и достигать поставленных целей.</li>
+    </ol>
+    <p><strong>TG Мастер — это полноценная стратегия для роста вашего бизнеса</strong></p>
+    <p>Все инструменты за 20 000 ₽ в месяц вместо 27 000 ₽</p>
     <button onclick="contact()">Связаться с нами</button>
     <p id="response"></p>
 
