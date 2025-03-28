@@ -178,18 +178,7 @@
 
         function contact() {
     const userName = tg.initDataUnsafe.user ? tg.initDataUnsafe.user.first_name : 'Гость';
-    fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ user_name: userName })
-    })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('response').innerText = data.message;
-    })
-    .catch(error => {
-        document.getElementById('response').innerText = 'Ошибка!';
-    });
+    document.getElementById('response').innerText = `Привет, ${userName}! Спасибо за интерес к TG Мастер! Скоро с вами свяжутся.`;
 }
     </script>
 </body>
